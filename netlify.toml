@@ -1,13 +1,13 @@
 # Configuración de Netlify para despliegue automático
 
 [build]
-  command = "cd frontend && npm install && npm run build"
+  command = "npm --prefix frontend install && npm --prefix frontend run build"
   publish = "frontend/build"
 
 [build.environment]
   NODE_ENV = "production"
-  CI = "true"
-  NODE_VERSION = "18.19.0"
+  CI = "false"
+  NODE_VERSION = "18"
 
 # Variables de entorno para producción
 [context.production.environment]
