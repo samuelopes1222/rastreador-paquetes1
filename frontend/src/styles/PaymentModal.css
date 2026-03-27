@@ -1,0 +1,474 @@
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.payment-modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.payment-modal .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.payment-modal .close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Payment Instructions */
+.payment-instructions,
+.payment-confirmation {
+  padding: 30px;
+}
+
+.payment-instructions h2,
+.payment-confirmation h2 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.package-code {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin: 0 0 25px 0;
+}
+
+.package-code strong {
+  color: #3498db;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+/* Bank Details */
+.bank-details {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: none;
+}
+
+.bank-details h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+/* Accounts Container */
+.accounts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.account-card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.account-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.account-card.red-accent {
+  border-left-color: #e74c3c;
+}
+
+.account-card.blue-accent {
+  border-left-color: #3498db;
+}
+
+.account-card.white-accent {
+  border-left-color: #95a5a6;
+}
+
+.account-badge {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.account-card .detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.account-card .detail-item label {
+  font-weight: 600;
+  color: #2c3e50;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.account-card .detail-item .value {
+  flex: 1;
+  background: #f9fafb;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #2c3e50;
+  font-size: 11px;
+  word-break: break-all;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: #2c3e50;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.detail-item .value {
+  flex: 1;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #2c3e50;
+}
+
+.detail-item .amount-emphasis {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.copy-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #ecf0f1;
+  border-color: #3498db;
+}
+
+/* Important Note */
+.important-note {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #856404;
+  line-height: 1.5;
+}
+
+.important-note p {
+  margin: 0;
+}
+
+.important-note strong {
+  color: #2c3e50;
+}
+
+/* Transfer Form */
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.form-group label .optional-text {
+  font-weight: 400;
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Upload Area */
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-upload {
+  padding: 12px 16px;
+  border: 2px dashed #3498db;
+  border-radius: 6px;
+  background: #ecf0f1;
+  color: #3498db;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.btn-upload:hover {
+  background: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+
+.image-preview {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid #27ae60;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(231, 76, 60, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-remove:hover {
+  background: rgba(192, 57, 43, 1);
+}
+
+.form-group small {
+  position: absolute;
+  right: 12px;
+  top: 30px;
+  color: #7f8c8d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Confirmation Note */
+.confirmation-note {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #155724;
+}
+
+.confirmation-note p {
+  margin: 0;
+}
+
+/* Buttons */
+.btn {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+  border: 1px solid #bdc3c7;
+}
+
+.btn-secondary:hover {
+  background: #d5dbdb;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 153, 142, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button Container */
+.payment-instructions .btn,
+.payment-confirmation button {
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .payment-modal {
+    margin: 20px;
+    max-height: none;
+  }
+
+  .payment-instructions,
+  .payment-confirmation {
+    padding: 20px;
+  }
+
+  .bank-details {
+    padding: 15px;
+  }
+
+  .detail-item {
+    flex-wrap: wrap;
+  }
+
+  .detail-item .value {
+    margin-top: 5px;
+  }
+
+  .copy-btn {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #075e54 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+}

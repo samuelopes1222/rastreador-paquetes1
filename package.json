@@ -1,0 +1,26 @@
+{
+  "name": "rastreador-paquetes",
+  "version": "1.0.0",
+  "description": "Real-time package tracking system",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build:backend": "cd backend && npm build",
+    "build:frontend": "cd frontend && npm run build",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down",
+    "docker:rebuild": "docker-compose up --build"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.8",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "twilio": "^5.13.0"
+  }
+}

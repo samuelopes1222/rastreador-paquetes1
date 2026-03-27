@@ -1,0 +1,32 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, remove if you want transparent) -->
+  <rect width="500" height="500" fill="none"/>
+  
+  <!-- Red wing/feather on left -->
+  <path d="M 120 80 Q 100 120 110 160 Q 120 140 140 130 Q 135 110 130 90 Z" fill="#C41E3A" stroke="#A01830" stroke-width="2"/>
+  <path d="M 110 160 Q 100 200 115 240 Q 130 210 140 180 Z" fill="#E63946"/>
+  
+  <!-- Blue package/box in center -->
+  <rect x="140" y="100" width="120" height="100" fill="#0066CC" stroke="#0052A3" stroke-width="2" rx="5"/>
+  <rect x="145" y="105" width="110" height="20" fill="#0080FF" opacity="0.6"/>
+  
+  <!-- Red circle/wheel on right -->
+  <circle cx="280" cy="170" r="45" fill="none" stroke="#C41E3A" stroke-width="8"/>
+  <circle cx="280" cy="170" r="35" fill="none" stroke="#C41E3A" stroke-width="4"/>
+  <circle cx="280" cy="170" r="8" fill="#C41E3A"/>
+  
+  <!-- Motion lines on left (speed effect) -->
+  <line x1="100" y1="220" x2="130" y2="220" stroke="#0066CC" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <line x1="105" y1="240" x2="135" y2="240" stroke="#0066CC" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <line x1="110" y1="260" x2="130" y2="260" stroke="#0066CC" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  
+  <!-- Text: TRANSPORTE -->
+  <text x="250" y="330" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#0066CC" text-anchor="middle">
+    TRANSPORTE
+  </text>
+  
+  <!-- Text: WILLMORE -->
+  <text x="250" y="390" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#0066CC" text-anchor="middle">
+    WILLMORE
+  </text>
+</svg>

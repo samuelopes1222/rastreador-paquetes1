@@ -1,0 +1,45 @@
+# Configuración de Netlify para despliegue automático
+
+[build]
+  command = "cd frontend && npm install && npm run build"
+  publish = "frontend/build"
+
+[build.environment]
+  NODE_ENV = "production"
+  CI = "true"
+  NODE_VERSION = "18.19.0"
+
+# Variables de entorno para producción
+[context.production.environment]
+  REACT_APP_API_URL = "https://api.tudominio.com"
+  REACT_APP_WS_URL = "wss://api.tudominio.com"
+
+# Variables de entorno para preview
+[context.dev.environment]
+  REACT_APP_API_URL = "http://localhost:5000"
+  REACT_APP_WS_URL = "ws://localhost:5000"
+
+# Redirects para React Router (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers para caché estático
+[[headers]]
+  for = "/static/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
