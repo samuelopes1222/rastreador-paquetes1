@@ -1,18 +1,21 @@
 # Configuración de Netlify para despliegue automático
 
 [build]
-  command = "npm --prefix frontend install && npm --prefix frontend run build"
+  command = "npm ci --prefix frontend && npm --prefix frontend run build"
   publish = "frontend/build"
+  base = "."
 
 [build.environment]
   NODE_ENV = "production"
   CI = "false"
   NODE_VERSION = "18"
+  SKIP_PREFLIGHT_CHECK = "true"
 
 # Variables de entorno para producción
 [context.production.environment]
   REACT_APP_API_URL = "https://api.tudominio.com"
   REACT_APP_WS_URL = "wss://api.tudominio.com"
+  NODE_OPTIONS = "--max_old_space_size=4096"
 
 # Variables de entorno para preview
 [context.dev.environment]
